@@ -1,0 +1,31 @@
+{
+    "title": "Yale Doorman via Smart Hub",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Yale Doorman via Smart Hub",
+                "description": "Enter the login information to access your Yale Smart Hub. If you want to be able to unlock the door using automations, also enter the PIN-code to use.",
+                "data": {
+                    "username": "Username",
+                    "password": "Password",
+                    "pincode": "PIN-code"
+                }
+            }
+        },
+        "error": {
+            "auth": "Username/Password is wrong."
+        }
+    }, "options": {
+        "step": {
+            "user": {
+                "title": "Yale Doorman via Smart Hub",
+                "description": "Enter the login information to access your Yale Smart Hub. If you want to be able to unlock the door using automations, also enter the PIN-code to use.",
+                "data": {
+                    "username": "Username",
+                    "password": "Password",
+                    "pincode": "PIN-code"
+                }
+            }
+        }
+    }
+}

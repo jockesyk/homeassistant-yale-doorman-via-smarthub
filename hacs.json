@@ -1,0 +1,5 @@
+{
+  "name": "Yale Doorman via Smart Hub",
+  "domains": ["lock"],
+  "iot_class": ["Cloud Polling"]
+}
