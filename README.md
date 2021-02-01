@@ -1,5 +1,8 @@
 # homeassistant-yale-doorman-via-smarthub
 A Home Assistant integration to control a Yale Doorman lock via the Yale Smart Hub.
+So far only tested on a single Yale Doorman V2N.
+
+<img style="width:300px;" src="web/images/logo_1024.png" alt="Doorman" />
 
 # HomeKit
 <img style="width:300px;" src="web/images/homekit.png" alt="Works with Apple Homekit" />
