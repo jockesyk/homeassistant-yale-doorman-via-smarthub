@@ -1,0 +1,31 @@
+{
+    "title": "Yale Doorman via Smart Hub",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Yale Doorman via Smart Hub",
+                "description": "Ange inloggningsinformationen till din Yale Smart Hub. Om vill kunna automatisera uppl\u00e5sning, ange också PIN-koden.",
+                "data": {
+                    "username": "Anv\u00e4ndarnamn",
+                    "password": "L\u00f6senord",
+                    "pincode": "PIN-kod"
+                }
+            }
+        },
+        "error": {
+            "auth": "Felaktigt anv\u00e4ndarnamn eller l\u00f6senord"
+        }
+    }, "options": {
+        "step": {
+            "user": {
+                "title": "Yale Doorman via Smart Hub",
+                "description": "Ange inloggningsinformationen till din Yale Smart Hub. Om vill kunna automatisera uppl\u00e5sning, ange också PIN-koden.",
+                "data": {
+                    "username": "Anv\u00e4ndarnamn",
+                    "password": "L\u00f6senord",
+                    "pincode": "PIN-kod"
+                }
+            }
+        }
+    }
+}

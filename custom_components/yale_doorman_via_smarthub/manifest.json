@@ -1,7 +1,8 @@
 {
   "domain": "yale_doorman_via_smarthub",
-  "name": "Yale Doorman via Yale Smart Hub",
+  "name": "Yale Doorman via Smart Hub",
   "documentation": "https://github.com/jockesyk/homeassistant-yale-doorman-via-smarthub",
+  "issue_tracker": "https://github.com/jockesyk/homeassistant-yale-doorman-via-smarthub/issues",
   "requirements": [],
   "dependencies": [],
   "codeowners": ["@jockesyk"],
