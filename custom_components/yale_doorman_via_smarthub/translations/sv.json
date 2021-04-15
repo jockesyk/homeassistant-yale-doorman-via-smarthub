@@ -4,11 +4,12 @@
         "step": {
             "user": {
                 "title": "Yale Doorman via Smart Hub",
-                "description": "Ange inloggningsinformationen till din Yale Smart Hub. Om vill kunna automatisera uppl\u00e5sning, ange ocks\u00e5 PIN-koden.",
+                "description": "Ange inloggningsinformationen till din Yale Smart Hub. Om du vill kunna automatisera uppl\u00e5sning, ange ocks\u00e5 PIN-koden.",
                 "data": {
                     "username": "Anv\u00e4ndarnamn",
                     "password": "L\u00f6senord",
-                    "pincode": "PIN-kod"
+                    "pincode": "PIN-kod",
+					"enable_binary_sensor": "Visa d\u00f6rr-sensorn som en egen entitet"
                 }
             }
         },
@@ -19,11 +20,12 @@
         "step": {
             "user": {
                 "title": "Yale Doorman via Smart Hub",
-                "description": "Ange inloggningsinformationen till din Yale Smart Hub. Om vill kunna automatisera uppl\u00e5sning, ange ocks\u00e5 PIN-koden.",
+                "description": "Ange inloggningsinformationen till din Yale Smart Hub. Om du vill kunna automatisera uppl\u00e5sning, ange ocks\u00e5 PIN-koden.",
                 "data": {
                     "username": "Anv\u00e4ndarnamn",
                     "password": "L\u00f6senord",
-                    "pincode": "PIN-kod"
+                    "pincode": "PIN-kod",
+					"enable_binary_sensor": "Visa d\u00f6rr-sensorn som en egen entitet"
                 }
             }
         }
