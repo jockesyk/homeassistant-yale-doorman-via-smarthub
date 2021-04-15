@@ -13,8 +13,11 @@ from .api import YaleDoormanViaSmarthubApiClient
 from .const import (
     CONF_PASSWORD,
     CONF_USERNAME,
+    CONF_ENABLE_BINARY_SENSOR,
     DOMAIN,
     PLATFORMS,
+    LOCK,
+    BINARY_SENSOR,
     STARTUP_MESSAGE,
 )
 
@@ -22,47 +25,44 @@ SCAN_INTERVAL = timedelta(seconds=30)
 
 _LOGGER: logging.Logger = logging.getLogger(__package__)
 
-
 async def async_setup(hass: HomeAssistant, config: Config):
     return True
-
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     if hass.data.get(DOMAIN) is None:
         hass.data.setdefault(DOMAIN, {})
         _LOGGER.info(STARTUP_MESSAGE)
-
+    
     username = entry.data.get(CONF_USERNAME)
     password = entry.data.get(CONF_PASSWORD)
-
+    enable_binary_sensor = entry.data.get(CONF_ENABLE_BINARY_SENSOR)
+    
     session = async_get_clientsession(hass)
     client = YaleDoormanViaSmarthubApiClient(username, password, session)
-
+    
     coordinator = YaleDoormanViaSmarthubDataUpdateCoordinator(hass, client=client)
     await coordinator.async_refresh()
-
+    
     if not coordinator.last_update_success:
         raise ConfigEntryNotReady
-
+    
     hass.data[DOMAIN][entry.entry_id] = coordinator
-
-    for platform in PLATFORMS:
-        if entry.options.get(platform, True):
-            coordinator.platforms.append(platform)
-            hass.async_add_job(
-                hass.config_entries.async_forward_entry_setup(entry, platform)
-            )
-
+    
+    coordinator.platforms.append(LOCK)
+    hass.async_add_job(hass.config_entries.async_forward_entry_setup(entry, LOCK))
+    if enable_binary_sensor:
+        coordinator.platforms.append(BINARY_SENSOR)
+        hass.async_add_job(hass.config_entries.async_forward_entry_setup(entry, BINARY_SENSOR))
+    
     entry.add_update_listener(async_reload_entry)
     return True
 
-
 class YaleDoormanViaSmarthubDataUpdateCoordinator(DataUpdateCoordinator):
-
+    
     def __init__(self, hass: HomeAssistant, client: YaleDoormanViaSmarthubApiClient) -> None:
         self.api = client
         self.platforms = []
-
+        
         super().__init__(hass, _LOGGER, name=DOMAIN, update_interval=SCAN_INTERVAL)
 
     async def _async_update_data(self):
@@ -72,8 +72,7 @@ class YaleDoormanViaSmarthubDataUpdateCoordinator(DataUpdateCoordinator):
         except Exception as exception:
             _LOGGER.info(exception)
             raise UpdateFailed() from exception
-
-
+    
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     coordinator = hass.data[DOMAIN][entry.entry_id]
     unloaded = all(
@@ -87,9 +86,8 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     )
     if unloaded:
         hass.data[DOMAIN].pop(entry.entry_id)
-
+    
     return unloaded
-
 
 async def async_reload_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
     await async_unload_entry(hass, entry)

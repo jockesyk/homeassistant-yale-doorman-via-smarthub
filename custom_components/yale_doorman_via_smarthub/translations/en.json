@@ -8,7 +8,8 @@
                 "data": {
                     "username": "Username",
                     "password": "Password",
-                    "pincode": "PIN-code"
+                    "pincode": "PIN-code",
+					"enable_binary_sensor": "Show the door sensor as a separate entity"
                 }
             }
         },
@@ -23,7 +24,8 @@
                 "data": {
                     "username": "Username",
                     "password": "Password",
-                    "pincode": "PIN-code"
+                    "pincode": "PIN-code",
+					"enable_binary_sensor": "Show the door sensor as a separate entity"
                 }
             }
         }

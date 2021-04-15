@@ -1,32 +1,25 @@
 NAME = "Yale Doorman via Smart Hub"
 DOMAIN = "yale_doorman_via_smarthub"
 DOMAIN_DATA = f"{DOMAIN}_data"
-VERSION = "0.0.1"
-ATTRIBUTION = ""
+VERSION = "0.0.3"
 ISSUE_URL = "https://github.com/jockesyk/homeassistant-yale-doorman-via-smarthub/issues"
 MANUFACTURER = "Yale"
 MODEL = "Doorman"
 HUBNAME = "Yale Smart Hub"
 
-# Icons
-ICON = "mdi:door"
-
-# Device class
 BINARY_SENSOR_DEVICE_CLASS = "door"
 
-# Platforms
 LOCK = "lock"
 BINARY_SENSOR = "binary_sensor"
-PLATFORMS = [LOCK]
-#PLATFORMS = [LOCK, BINARY_SENSOR] # Use this if you also want a binary sensor indicating if the door is open or closed
+PLATFORMS = [LOCK, BINARY_SENSOR]
 
-# Configuration and options
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"
 CONF_PINCODE = "pincode"
+CONF_ENABLE_BINARY_SENSOR = "enable_binary_sensor"
 
-# Defaults
-DEFAULT_NAME = DOMAIN
+BITWISE_CLOSED = 16
+BITWISE_LOCKED = 1
 
 STARTUP_MESSAGE = f"""
 -------------------------------------------------------------------
