@@ -102,8 +102,10 @@ class YaleDoormanViaSmarthubOptionsFlowHandler(config_entries.OptionsFlow):
             if self.options.get(CONF_ENABLE_BINARY_SENSOR):
                 #coordinator.platforms.append(BINARY_SENSOR)
                 #self.hass.async_add_job(self.hass.config_entries.async_forward_entry_setup(self.config_entry, BINARY_SENSOR))
+				pass
             else:
                 #self.hass.config_entries.async_forward_entry_unload(self.config_entry, BINARY_SENSOR)
+				pass
         
         return self.async_create_entry(
             title=self.config_entry.data.get(CONF_USERNAME), data=self.options
