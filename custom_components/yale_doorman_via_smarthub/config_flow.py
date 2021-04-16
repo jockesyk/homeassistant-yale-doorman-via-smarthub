@@ -92,19 +92,6 @@ class YaleDoormanViaSmarthubOptionsFlowHandler(config_entries.OptionsFlow):
         )
     
     async def _update_options(self):
-        reload_entities = False
-        if self.config_entry.data.get(CONF_ENABLE_BINARY_SENSOR) != self.options.get(CONF_ENABLE_BINARY_SENSOR):
-            reload_entities = True
-        
-        self.config_entry.data = self.options
-        
-        if reload_entities:
-            if self.options.get(CONF_ENABLE_BINARY_SENSOR):
-                #coordinator.platforms.append(BINARY_SENSOR)
-                #self.hass.async_add_job(self.hass.config_entries.async_forward_entry_setup(self.config_entry, BINARY_SENSOR))
-            else:
-                #self.hass.config_entries.async_forward_entry_unload(self.config_entry, BINARY_SENSOR)
-        
         return self.async_create_entry(
             title=self.config_entry.data.get(CONF_USERNAME), data=self.options
         )
