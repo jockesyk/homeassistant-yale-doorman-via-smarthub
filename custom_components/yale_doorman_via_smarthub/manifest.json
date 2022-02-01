@@ -7,6 +7,6 @@
     "dependencies": [],
     "codeowners": ["@jockesyk"],
     "config_flow": true,
-    "version": "0.0.3",
+    "version": "0.0.6",
     "iot_class": "cloud_polling"
 }
