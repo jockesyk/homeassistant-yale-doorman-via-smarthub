@@ -106,7 +106,7 @@ class YaleDoormanViaSmarthubLock(YaleDoormanViaSmarthubEntity, LockEntity):
         return "mdi:door-open"
     
     @property
-    def device_state_attributes(self):
+    def extra_state_attributes(self):
         door = "closed"
         if self.is_door_open:
             door = "open"
