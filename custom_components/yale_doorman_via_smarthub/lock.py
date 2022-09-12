@@ -61,7 +61,10 @@ class YaleDoormanViaSmarthubLock(YaleDoormanViaSmarthubEntity, LockEntity):
             self.old_door_status = door_status
         
         except Exception as exception:
-            door_status = self.old_door_status
+            try:
+                door_status = self.old_door_status
+            except Exception as exception2:
+                door_status = 0
         
         if door_status & BITWISE_CLOSED:
             if door_status & BITWISE_LOCKED:
@@ -74,7 +77,10 @@ class YaleDoormanViaSmarthubLock(YaleDoormanViaSmarthubEntity, LockEntity):
             door_status = int(self.coordinator.data["data"]["device_status"][self.idx]["minigw_lock_status"],16)
             self.old_door_status = door_status
         except Exception as exception:
-            door_status = self.old_door_status
+            try:
+                door_status = self.old_door_status
+            except Exception as exception2:
+                door_status = 0
         
         if door_status & BITWISE_CLOSED:
             return False
@@ -97,7 +103,10 @@ class YaleDoormanViaSmarthubLock(YaleDoormanViaSmarthubEntity, LockEntity):
             door_status = int(self.coordinator.data["data"]["device_status"][self.idx]["minigw_lock_status"],16)
             self.old_door_status = door_status
         except Exception as exception:
-            door_status = self.old_door_status
+            try:
+                door_status = self.old_door_status
+            except Exception as exception2:
+                door_status = 0
         
         if door_status & BITWISE_CLOSED:
             if door_status & BITWISE_LOCKED:
