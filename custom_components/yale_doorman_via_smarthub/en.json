@@ -1,0 +1,50 @@
+{
+    "title": "Yale Doorman via Smart Hub",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Yale Doorman via Smart Hub",
+                "description": "Enter the login information to access your Yale Smart Hub. If you want to be able to unlock the door using automations, also enter the PIN-code to use.",
+                "data": {
+                    "username": "Username",
+                    "password": "Password",
+                    "pincode": "PIN-code",
+					"enable_binary_sensor": "Show the door sensor as a separate entity"
+                }
+            }
+        },
+        "error": {
+            "auth": "Username/Password is wrong."
+        }
+    }, "options": {
+        "step": {
+            "user": {
+                "title": "Yale Doorman via Smart Hub",
+                "description": "Enter the login information to access your Yale Smart Hub. If you want to be able to unlock the door using automations, also enter the PIN-code to use.",
+                "data": {
+                    "username": "Username",
+                    "password": "Password",
+                    "pincode": "PIN-code",
+					"enable_binary_sensor": "Show the door sensor as a separate entity"
+                }
+            }
+        }
+    }, "responses": {
+            "event_type": {
+                "1301": "Yale hub - no powersupply",
+                "1302": "Yale Hub - battery low",
+                "1602": "Periodical test",
+                "1801": "Unlocked from inside",
+                "1802": "Unlocked from outside, token or keypad",
+                "1803": "Unlocked by app",
+                "1807": "Auto-relocked",
+                "1812": "Lock added to the system",
+                "1815": "Failed to lock",
+                "1816": "Locked after a failed lock",
+                "3801": "Locked from inside",
+                "3802": "Locked with star button",
+                "3803": "Locked with app",
+                "3812": "Lock removed from the system"
+            }
+        }
+}

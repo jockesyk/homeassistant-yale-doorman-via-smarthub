@@ -1,0 +1,25 @@
+download_yale_event_log:
+  name: Download Yale Event Log
+  description: Download the event log from the Yale API, optionally across multiple pages.
+  fields:
+    pages:
+      description: "Number of pages to fetch, or '*' to fetch all available pages."
+      required: false
+      example: "2"
+      selector:
+        text:
+  response:
+    description: "Result from request:"
+    fields:
+      event_log_table:
+        description: "Formatted data"
+        selector:
+          object:
+      total_rows_returned:
+        description: "Number of rows"
+        selector:
+          object:
+      pages_fetched:
+        description: "Number of pages fetched"
+        selector:
+          number:
