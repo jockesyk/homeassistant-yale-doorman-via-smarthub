@@ -29,5 +29,22 @@
                 }
             }
         }
+    }, "responses": {
+		"event_type": {
+            "1301": "Yale hub - ingen str\u00f6mf\u00f6rs\u00f6rjning",
+            "1302": "Yale Hub - l\u00e5g batteriniv\u00e5",
+            "1602": "Periodiskt test",
+            "1801": "Uppl\u00e5st inifr\u00e5n",
+            "1802": "Uppl\u00e5st utifr\u00e5n med tagg eller kod",
+            "1803": "Uppl\u00e5st av app",
+            "1807": "Automatisk l\u00e5sning",
+            "1812": "L\u00e5s tillagt i systemet",
+            "1815": "L\u00e5sning misslyckades",
+            "1816": "L\u00e5st efter misslyckad l\u00e5sning",
+            "3801": "L\u00e5st från insidan",
+            "3802": "L\u00e5st med *-knappen",
+            "3803": "L\u00e5st med appen",
+            "3812": "L\u00e5s borttaget fr\u00e5n systemet"
+		}
     }
 }
