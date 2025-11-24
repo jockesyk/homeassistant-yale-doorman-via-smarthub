@@ -30,21 +30,46 @@
             }
         }
     }, "responses": {
-            "event_type": {
-                "1301": "Yale hub - no powersupply",
-                "1302": "Yale Hub - battery low",
-                "1602": "Periodical test",
-                "1801": "Unlocked from inside",
-                "1802": "Unlocked from outside, token or keypad",
-                "1803": "Unlocked by app",
-                "1807": "Auto-relocked",
-                "1812": "Lock added to the system",
-                "1815": "Failed to lock",
-                "1816": "Locked after a failed lock",
-                "3801": "Locked from inside",
-                "3802": "Locked with star button",
-                "3803": "Locked with app",
-                "3812": "Lock removed from the system"
+        "event_type": {
+            "1301": "Yale hub - no powersupply",
+            "1302": "Yale Hub - battery low",
+            "1602": "Periodical test",
+            "1801": "Unlocked from inside",
+            "1802": "Unlocked from outside, token or keypad",
+            "1803": "Unlocked by app",
+            "1807": "Auto-relocked",
+            "1812": "Lock added to the system",
+            "1815": "Failed to lock",
+            "1816": "Locked after a failed lock",
+            "3801": "Locked from inside",
+            "3802": "Locked with star button",
+            "3803": "Locked with app",
+            "3812": "Lock removed from the system"
+        }
+
+    }, "services": {
+        "download_yale_event_log": {
+            "name": "Download Yale Event Log",
+            "description": "Download the event log from the Yale API, optionally across multiple pages.",
+            "fields": {
+                "pages": {
+                    "description": "Number of pages to fetch, or '*' to fetch all available pages."
+                }
+            },
+            "response": {
+                "description": "Result from request:",
+                "fields": {
+                    "event_log_table": {
+                        "description": "Formatted data"
+                    },
+                    "total_rows_returned": {
+                        "description": "Number of rows"
+                    },
+                    "pages_fetched": {
+                        "description": "Number of pages fetched"
+                    }
+                }
             }
         }
+    }
 }
